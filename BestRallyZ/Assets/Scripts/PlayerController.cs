@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed at which the character moves forward
     public float turnSpeed = 1000f; // Speed at which the character turns (degrees per second)
+    public int score = 0;
+    public Text scoreText;
 
     private Quaternion targetRotation; // Target rotation for smooth turning
     private Vector3 moveDirection = Vector3.forward; // Current direction the character is moving
@@ -70,5 +73,11 @@ public class PlayerController : MonoBehaviour
 
         // Enable new inputs after the turn animation
         isTurning = false;
+    }
+
+    public void updateScore()
+    {
+        score++;
+        scoreText.text = score.ToString();
     }
 }
