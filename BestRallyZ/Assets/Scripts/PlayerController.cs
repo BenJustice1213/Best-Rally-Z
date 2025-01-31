@@ -8,7 +8,13 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f; // Speed at which the character moves forward
     public float turnSpeed = 1000f; // Speed at which the character turns (degrees per second)
     public int score = 0;
+    public float startingGas = 30f;
+    public float currentGas = 0f;
+    public float fuelUpgrade = 5f;
     public Text scoreText;
+    public Text gasText;
+    private int timer;
+
 
     private Quaternion targetRotation; // Target rotation for smooth turning
     private Vector3 moveDirection = Vector3.forward; // Current direction the character is moving
@@ -17,13 +23,19 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         targetRotation = transform.rotation; // Initialize target rotation
+        currentGas = startingGas;
     }
 
     void Update()
     {
+        if (currentGas >= 0f)
+        {
+            currentGas -= 1 * Time.deltaTime;
+            gasText.text = currentGas.ToString();
+
+        }
         // Move the character forward continuously in the current move direction
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
-
         // Check for player input to handle turning
         if (!isTurning)
         {
@@ -79,5 +91,11 @@ public class PlayerController : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+    }
+
+    public void updateGas()
+    {
+        currentGas += fuelUpgrade;
+        gasText.text = currentGas.ToString();
     }
 }
