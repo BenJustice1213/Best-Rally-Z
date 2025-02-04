@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Text scoreText;
     public Text gasText;
     public Slider slider;
+   
 
     private int timer;
 
