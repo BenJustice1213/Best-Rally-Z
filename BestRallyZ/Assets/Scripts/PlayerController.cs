@@ -14,20 +14,22 @@ public class PlayerController : MonoBehaviour
     public Text scoreText;
     public Text gasText;
     public Slider slider;
-   
 
     private int timer;
-
 
     private Quaternion targetRotation; // Target rotation for smooth turning
     private Vector3 moveDirection = Vector3.forward; // Current direction the character is moving
     private bool isTurning = false; // Flag to check if the character is currently turning
+    private Rigidbody rb;
 
     void Start()
     {
         targetRotation = transform.rotation; // Initialize target rotation
         currentGas = startingGas;
         SetMaxGas(startingGas);
+
+        rb = GetComponent<Rigidbody>(); // Get the Rigidbody component
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation; // Freeze Y position and rotation
     }
 
     void Update()
@@ -38,7 +40,6 @@ public class PlayerController : MonoBehaviour
         {
             currentGas -= 1 * Time.deltaTime;
             gasText.text = "Gas " + currentGas.ToString();
-
         }
         // Move the character forward continuously in the current move direction
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
         isTurning = true;
 
         // Wait for a short duration to show the turning animation
-        yield return new WaitForSeconds(0.1f); // Adjust this duration to your prefers
+        yield return new WaitForSeconds(0.1f); // Adjust this duration to your preference
 
         // Enable new inputs after the turn animation
         isTurning = false;
@@ -105,7 +106,6 @@ public class PlayerController : MonoBehaviour
         gasText.text = currentGas.ToString();
     }
 
-
     // Functions to control UI gas slider bar
     public void SetMaxGas(float startingGas)
     {
@@ -116,5 +116,18 @@ public class PlayerController : MonoBehaviour
     public void UpdateGasSlider()
     {
         slider.value = currentGas;
+    }
+
+    // Handle collisions
+    void OnCollisionEnter(Collision collision)
+    {
+        // Check if the collision is with a wall
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            // Stop the player's movement
+            moveDirection = Vector3.zero;
+            // Optionally, you can also bounce back the player
+            transform.position -= moveDirection * moveSpeed * Time.deltaTime;
+        }
     }
 }
