@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
     {
         // Follow the target's position while maintaining the offset
         Vector3 desiredPosition = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * 5f);
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * 10f);
 
         // Optionally, you can adjust the camera's rotation to look at the target
         transform.LookAt(target.position);

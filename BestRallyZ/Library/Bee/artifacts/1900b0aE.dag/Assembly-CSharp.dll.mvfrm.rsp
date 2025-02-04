@@ -1,3 +1,11 @@
+Library\Bee\artifacts\mvdfrm\Unity.Postprocessing.Editor.ref.dll_1C9CD17610FFA3F0.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Postprocessing.Runtime.ref.dll_3152B6A9836FBF3B.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Core.Editor.ref.dll_46EB9B6930B27991.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Core.Runtime.ref.dll_CE6A42C97D96EB0A.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Core.ShaderLibrary.ref.dll_7F2C410A434F5518.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.ref.dll_1A2083B43FB0BF18.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Searcher.Editor.ref.dll_12B7E1785E41BE0E.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.ShaderGraph.Editor.ref.dll_0F50152946DB09D0.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.UI.ref.dll_4C98D3F7040CD4F5.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.UI.ref.dll_08FEAA520A2EFD60.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.CoreModule.dll_FC6A229B4039A1F3.mvfrm
@@ -83,3 +91,6 @@ Library\Bee\artifacts\mvdfrm\UnityEngine.VirtualTexturingModule.dll_1F7D24C915AF
 Library\Bee\artifacts\mvdfrm\UnityEngine.VRModule.dll_439C8DCD6E85BB0B.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.WindModule.dll_95D9D11679758B87.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.XRModule.dll_765B50D1F7C00869.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Android.Gradle.dll_81F2092F6D7FE55B.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Android.GradleProject.dll_055916D2F07BD90A.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Android.Types.dll_B8180B7B4DB41B11.mvfrm

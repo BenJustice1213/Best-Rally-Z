@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float fuelUpgrade = 5f;
     public Text scoreText;
     public Text gasText;
+    public Slider slider;
+
     private int timer;
 
 
@@ -24,14 +26,17 @@ public class PlayerController : MonoBehaviour
     {
         targetRotation = transform.rotation; // Initialize target rotation
         currentGas = startingGas;
+        SetMaxGas(startingGas);
     }
 
     void Update()
     {
+        UpdateGasSlider();
+
         if (currentGas >= 0f)
         {
             currentGas -= 1 * Time.deltaTime;
-            gasText.text = currentGas.ToString();
+            gasText.text = "Gas " + currentGas.ToString();
 
         }
         // Move the character forward continuously in the current move direction
@@ -90,12 +95,25 @@ public class PlayerController : MonoBehaviour
     public void updateScore()
     {
         score++;
-        scoreText.text = score.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 
     public void updateGas()
     {
         currentGas += fuelUpgrade;
         gasText.text = currentGas.ToString();
+    }
+
+
+    // Functions to control UI gas slider bar
+    public void SetMaxGas(float startingGas)
+    {
+        slider.maxValue = startingGas;
+        slider.value = startingGas;
+    }
+
+    public void UpdateGasSlider()
+    {
+        slider.value = currentGas;
     }
 }
