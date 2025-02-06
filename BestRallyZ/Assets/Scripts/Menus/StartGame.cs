@@ -9,4 +9,9 @@ public class StartGame : MonoBehaviour
     {
         SceneManager.LoadScene("Best Rally Z");
     }
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }
