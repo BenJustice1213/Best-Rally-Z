@@ -301,27 +301,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18148}
     - Class: 114
-      Script: {instanceID: 18628}
+      Script: {instanceID: 18590}
     - Class: 114
-      Script: {instanceID: 18798}
+      Script: {instanceID: 18632}
     - Class: 114
-      Script: {instanceID: 18856}
+      Script: {instanceID: 18788}
     - Class: 114
-      Script: {instanceID: 19016}
+      Script: {instanceID: 18804}
     - Class: 114
-      Script: {instanceID: 19032}
+      Script: {instanceID: 18862}
     - Class: 114
-      Script: {instanceID: 19234}
+      Script: {instanceID: 19022}
     - Class: 114
-      Script: {instanceID: 19388}
+      Script: {instanceID: 19038}
     - Class: 114
-      Script: {instanceID: 19670}
+      Script: {instanceID: 19240}
     - Class: 114
-      Script: {instanceID: 19782}
+      Script: {instanceID: 19394}
     - Class: 114
-      Script: {instanceID: 79928}
+      Script: {instanceID: 19676}
     - Class: 114
-      Script: {instanceID: 152274}
+      Script: {instanceID: 19788}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -396,9 +396,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18148}
     - Class: 114
-      Script: {instanceID: 18896}
+      Script: {instanceID: 18402}
     - Class: 114
-      Script: {instanceID: 562862}
+      Script: {instanceID: 18902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -523,41 +523,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18382}
     - Class: 114
-      Script: {instanceID: 18444}
+      Script: {instanceID: 18402}
     - Class: 114
-      Script: {instanceID: 18448}
+      Script: {instanceID: 18446}
     - Class: 114
-      Script: {instanceID: 18474}
+      Script: {instanceID: 18450}
     - Class: 114
-      Script: {instanceID: 18488}
+      Script: {instanceID: 18476}
     - Class: 114
-      Script: {instanceID: 18560}
+      Script: {instanceID: 18490}
     - Class: 114
-      Script: {instanceID: 18604}
+      Script: {instanceID: 18562}
     - Class: 114
-      Script: {instanceID: 18670}
+      Script: {instanceID: 18608}
     - Class: 114
-      Script: {instanceID: 18720}
+      Script: {instanceID: 18674}
     - Class: 114
-      Script: {instanceID: 18910}
+      Script: {instanceID: 18724}
     - Class: 114
-      Script: {instanceID: 18960}
+      Script: {instanceID: 18916}
     - Class: 114
-      Script: {instanceID: 19024}
+      Script: {instanceID: 18966}
     - Class: 114
-      Script: {instanceID: 19146}
+      Script: {instanceID: 19030}
     - Class: 114
-      Script: {instanceID: 19284}
+      Script: {instanceID: 19152}
     - Class: 114
-      Script: {instanceID: 19294}
+      Script: {instanceID: 19290}
     - Class: 114
-      Script: {instanceID: 19336}
+      Script: {instanceID: 19300}
     - Class: 114
-      Script: {instanceID: 19408}
+      Script: {instanceID: 19342}
     - Class: 114
-      Script: {instanceID: 19570}
+      Script: {instanceID: 19414}
     - Class: 114
-      Script: {instanceID: 562862}
+      Script: {instanceID: 19576}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -626,9 +626,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18148}
     - Class: 114
-      Script: {instanceID: 18896}
+      Script: {instanceID: 18402}
     - Class: 114
-      Script: {instanceID: 562862}
+      Script: {instanceID: 18902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1092,6 +1092,12 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerEnumField
   - hash:
       serializedVersion: 2
+      Hash: 9d49078d4813480e61a0ef16c6aa64e3
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: QuitOnEscape
+  - hash:
+      serializedVersion: 2
       Hash: 20a120e55ad3ab65556328d5fd8309dd
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -1146,6 +1152,12 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerVBox
   - hash:
       serializedVersion: 2
+      Hash: 3d551c7a6b2c96b84a73cc16e6f85536
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GasSFX
+  - hash:
+      serializedVersion: 2
       Hash: 10ffd5579f941e0f4946756d18f1a9df
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering.UI
@@ -1192,6 +1204,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 6f2bdbacbb8b47f8f4551168cf1403e7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DuckSFX
   - hash:
       serializedVersion: 2
       Hash: abcf36724474590e9ad9e388e0e50ed8
@@ -1408,24 +1426,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: AmbientOcclusion
-  - hash:
-      serializedVersion: 2
-      Hash: 3d551c7a6b2c96b84a73cc16e6f85536
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: GasSFX
-  - hash:
-      serializedVersion: 2
-      Hash: 6f2bdbacbb8b47f8f4551168cf1403e7
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: DuckSFX
-  - hash:
-      serializedVersion: 2
-      Hash: 9d49078d4813480e61a0ef16c6aa64e3
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: QuitOnEscape
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
