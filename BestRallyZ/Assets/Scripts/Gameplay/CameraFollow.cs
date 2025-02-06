@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target; // The character that the camera will follow
-    public Vector3 offset = new Vector3(0, 10, -10); // Offset position of the camera relative to the character
+    public Transform target;
+    public Vector3 offset = new Vector3(0, 10, -10); // The Camera's offset position
+    public float smoothSpeed = 0.15f;
+
+    private Vector3 velocity = Vector3.zero;
 
     void LateUpdate()
     {
         // Follow the target's position while maintaining the offset
         Vector3 desiredPosition = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * 10f);
+        transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothSpeed);
 
-        // Optionally, you can adjust the camera's rotation to look at the target
+        
         transform.LookAt(target.position);
     }
 }

@@ -18,26 +18,30 @@ public class PlayerController : MonoBehaviour
     public Slider slider;
     [SerializeField] ParticleSystem explode;
 
+    private AudioSource audioSource;
     private int timer;
 
     private Quaternion targetRotation; // Target rotation for smooth turning
     private Vector3 moveDirection = Vector3.forward; // Current direction the character is moving
-    private bool isTurning = false; // Flag to check if the character is currently turning
+    private bool isTurning = false; // Bool to check if the character is currently turning
     private Rigidbody rb;
-    private bool canMoveForward = true; // Flag to check if the player can move forward
+    private bool canMoveForward = true; // Bool to check if the player can move forward
 
     public GameObject topDownCam;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         transform.position = new Vector3(-4.6f, 1.55f, 15.12f);
         explode.Stop();
         targetRotation = transform.rotation; // Initialize target rotation
         currentGas = startingGas;
         SetMaxGas(startingGas);
 
-        rb = GetComponent<Rigidbody>(); // Get the Rigidbody component
-        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation; // Freeze Y position and rotation
+        rb = GetComponent<Rigidbody>();
+
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
     }
 
     void Update()
@@ -49,6 +53,7 @@ public class PlayerController : MonoBehaviour
             score = 0;
             transform.position = new Vector3(-228, 1.55f, -1.89f);
             topDownCam.transform.position = new Vector3(-238, 515, -5);
+            audioSource.Play();
         }
         if (score == 6 && level == 2)
         {
@@ -102,7 +107,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Smoothly rotate towards the target rotation
+        // Makes rotation smoother
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
     }
 
@@ -110,10 +115,10 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection = newDirection;
 
-        // Set the target rotation for visual effect
+        // Sets the target rotation for visual effect
         targetRotation = turnAmount;
 
-        // Set turning flag to disable new inputs during the turn animation
+ 
         StartCoroutine(TurnCharacter());
     }
 
@@ -122,9 +127,9 @@ public class PlayerController : MonoBehaviour
         isTurning = true;
 
         // Wait for a short duration to show the turning animation
-        yield return new WaitForSeconds(0.1f); // Adjust this duration to your preference
+        yield return new WaitForSeconds(0.1f);
 
-        // Enable new inputs after the turn animation
+        // Allows new inputs after the turn animation
         isTurning = false;
     }
 
@@ -158,7 +163,7 @@ public class PlayerController : MonoBehaviour
         // Check if the collision is with a wall
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            // Stop the player's movement
+
             canMoveForward = false;
         }
     }
@@ -168,7 +173,7 @@ public class PlayerController : MonoBehaviour
         // Check if the collision is with a wall
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            // Allow the player to move forward again
+
             canMoveForward = true;
         }
     }

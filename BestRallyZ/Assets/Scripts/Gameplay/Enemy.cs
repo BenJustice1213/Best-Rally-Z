@@ -8,14 +8,16 @@ public class Enemy : MonoBehaviour
     public LayerMask wallLayer;
     private Vector3 direction;
     private float changeDirectionTime;
+    private AudioSource audioSource;
 
     void Start()
     {
-        // Set an initial direction
+        audioSource = GetComponent<AudioSource>();
+        // initial direction
         direction = Vector3.right;
-        // Set an initial time to change direction
+        // initial time to change direction
         changeDirectionTime = Random.Range(2f, 5f);
-        // Set initial rotation to face the initial direction
+        // initial rotation to face the initial direction
         transform.rotation = Quaternion.LookRotation(direction);
     }
 
@@ -24,12 +26,12 @@ public class Enemy : MonoBehaviour
         // Move in the current direction
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
-        // Update the timer for changing direction
+        // Updates the timer for changing direction
         changeDirectionTime -= Time.deltaTime;
         if (changeDirectionTime <= 0)
         {
             ChangeDirection();
-            changeDirectionTime = Random.Range(2f, 5f); // Reset the timer
+            changeDirectionTime = Random.Range(2f, 5f); // Resets the timer
         }
     }
 
@@ -38,12 +40,17 @@ public class Enemy : MonoBehaviour
         PlayerController controller = other.GetComponent<PlayerController>();
         if (controller != null)
         {
+            audioSource.Play();
             controller.GameOver();
         }
         else
         {
-            // Turn 90 degrees if it collides with anything other than the player
-            ChangeDirection();
+            if (other.CompareTag("Obstacle"))
+            {
+                // Turn 90 degrees if it collides with anything other than the player
+                ChangeDirection();
+            }
+            
         }
     }
 

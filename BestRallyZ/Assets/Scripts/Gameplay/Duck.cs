@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Duck : MonoBehaviour
 {
+    public DuckSFX duckSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class Duck : MonoBehaviour
         PlayerController controller = other.GetComponent<PlayerController>();
         if (controller != null)
         {
+            duckSFX.PlayCollectSound();
             controller.updateScore();
             Destroy(gameObject);
         }
