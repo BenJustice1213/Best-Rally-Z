@@ -351,6 +351,7 @@
 "Assets/Scripts/Gameplay/PlayerController.cs"
 "Assets/Scripts/Menus/Exit.cs"
 "Assets/Scripts/Menus/GoToMainMenu.cs"
+"Assets/Scripts/Menus/PlaySoundOnSceneLoad.cs"
 "Assets/Scripts/Menus/Restart.cs"
 "Assets/Scripts/Menus/StartGame.cs"
 "Assets/Scripts/Playerbroken.cs"
