@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection = Vector3.forward; // Current direction the character is moving
     private bool isTurning = false; // Flag to check if the character is currently turning
     private Rigidbody rb;
+    private bool canMoveForward = true; // Flag to check if the player can move forward
 
     void Start()
     {
@@ -66,8 +67,13 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
-        // Move the character forward continuously in the current move direction
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+
+        // Move the character forward continuously in the current move direction if allowed
+        if (canMoveForward)
+        {
+            transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
+        }
+
         // Check for player input to handle turning
         if (!isTurning)
         {
@@ -150,9 +156,17 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             // Stop the player's movement
-            moveDirection = Vector3.zero;
-            // Optionally, you can also bounce back the player
-            transform.position -= moveDirection * moveSpeed * Time.deltaTime;
+            canMoveForward = false;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        // Check if the collision is with a wall
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            // Allow the player to move forward again
+            canMoveForward = true;
         }
     }
 
