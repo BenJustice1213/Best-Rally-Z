@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private bool canMoveForward = true; // Flag to check if the player can move forward
 
+    public GameObject topDownCam;
+
     void Start()
     {
         transform.position = new Vector3(-4.6f, 1.55f, 15.12f);
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
             currentGas = 60f;
             score = 0;
             transform.position = new Vector3(-228, 1.55f, -1.89f);
+            topDownCam.transform.position = new Vector3(-238, 515, -5);
         }
         if (score == 6 && level == 2)
         {

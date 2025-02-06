@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638744036232188790
-    m_Hash: 1010676805
+      ticks: 638744133594960931
+    m_Hash: 3033489283
   m_LockFileStatus:
     m_FilePath: H:/UNITY PROJECTS/Best-Rally-Z/BestRallyZ/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638744036232198776
-    m_Hash: 1632546440
+      ticks: 638744133595126325
+    m_Hash: 858563486
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

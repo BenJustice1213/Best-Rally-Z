@@ -44502,6 +44502,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 748806949}
     - target: {fileID: 6425129936017871768, guid: 50db8f0bb9f288c41a869ba7dd56fe13, type: 3}
+      propertyPath: topDownCam
+      value: 
+      objectReference: {fileID: 742368784}
+    - target: {fileID: 6425129936017871768, guid: 50db8f0bb9f288c41a869ba7dd56fe13, type: 3}
       propertyPath: startingGas
       value: 60
       objectReference: {fileID: 0}
